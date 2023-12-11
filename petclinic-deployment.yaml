@@ -2,23 +2,25 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: petclinic-deployment
-  namespace: pet-clinic
+  namespace: petclinic
+  labels:
+    app: petclinic
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: petclinic-deployment
+      app: petclinic
   template:
     metadata:
       labels:
-        app: petclinic-deployment
+        app: petclinic
     spec:
       containers:
-      - name: petclinic-deployment
-        image: chetraseng/spring-petclinic:v1.0.0
+      - name: petclinic
+        image: chetraseng/spring-petclinic:latest
         resources:
           limits:
-            memory: 1500Mi
+            memory: 1000Mi
             cpu: 500m
         ports:
         - containerPort: 8080
