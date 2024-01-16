@@ -6,7 +6,7 @@ metadata:
   labels:
     app: petclinic
 spec:
-  replicas: 3
+  replicas: 1
   selector:
     matchLabels:
       app: petclinic
@@ -21,6 +21,6 @@ spec:
         resources:
           limits:
             memory: 1000Mi
-            cpu: 500m
+            cpu: 250m
         ports:
         - containerPort: 8080
