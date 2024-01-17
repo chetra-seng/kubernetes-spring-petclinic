@@ -1,0 +1,10 @@
+config:
+  target: "deployment_url"
+  phases:
+    - duration: 60
+      arrivalRate: 500
+
+scenarios:
+  - flow:
+    - get:
+        url: "/"
